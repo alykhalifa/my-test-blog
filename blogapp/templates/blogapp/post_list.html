@@ -1,17 +1,13 @@
+{% extends 'blogapp/base.html' %}
 
-<html>
-  <head>
-    <title>First Test Blog</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  </head>
-  <body>
-    {% for post in posts %}
-        <div>
-          <p>Published: {{ post.published_date }}</p>
-          <h1><a href="">{{ post.title }}</a></h1>
-          <p>{{ post.text|linebreaks }}</p>
-        </div>
-    {% endfor %}
-  </body>
-</html>
+    {% block content %}
+      {% for post in posts %}
+          <div class="post">
+              <div class="date">
+                  <p>published: {{ post.published_date }}</p>
+              </div>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>{{ post.text|linebreaks }}</p>
+          </div>
+      {% endfor %}
+    {% endblock %}
