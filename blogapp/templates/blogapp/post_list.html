@@ -1,9 +1,15 @@
+
 <html>
   <head>
     <title>First Test Blog</title>
   </head>
   <body>
-    <p>Hello There</p>
-    <p>Thi is a basic paragraph</p>
+    {% for post in posts %}
+        <div>
+          <p>Published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
   </body>
 </html>
